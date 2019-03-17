@@ -1,0 +1,63 @@
+{%extends 'Layout.html'%}
+
+{%block body%}
+<div class="container" align="left">
+	<label style="color: red">{{message}}</label>
+
+</div>
+
+<div class="container" align="right">
+<label style="color: grey">{{session["user"]}}</label><br>
+<a href="{{url_for('index')}}">Logout</a>
+
+</div>
+
+
+<div class="container" align="center">
+	
+	<h1>{{details.title}}</h1> <font size="3">by {{details.author}}({{details.year}})</font><br>
+	<div style="background-color: Lightgrey;width: 25%">
+	<h4>Goodreads reviews</h4>
+	<h5>Average Rating: {{avg_ratings}}/5</h5>
+	<h5>Number of Ratings:{{num_ratings}}</h5>
+	</div>
+	<div style="background-color: Lightgreen;width: 25%">
+		<h5>ADD YOUR RATING </h5><br>
+		<form action="{{url_for('book_details',book_id=details.id)}}" method="POST">
+		<label >Rate This: </label>
+		<select name="rating">
+  <option value=1>1</option>
+  <option value=2>2</option>
+  <option value=3>3</option>
+  <option value=4>4</option>
+  <option value=5>5</option>
+</select><br>
+<label>Add you comment here:</label><br>
+<textarea  name="comment" rows ="3"  >
+	</textarea><br>
+	<input type="submit" class="btn btn-info" value="Submit" ><br>
+</form>
+
+
+
+
+	</div>
+
+	<div class="container" align="center">
+		<ul class="list-group">
+			{%for list in all_reviews%}
+			<li class="list-group-item">
+				<font size="4">{{list.comment}}  </font><font color="blue">{{list.rating}} star</font><br>
+				<font size="2">{{list.username}}</font>
+				
+			</li>
+				{%endfor%}
+		</ul>
+
+	</div>
+
+
+</div>
+
+
+{%endblock%}

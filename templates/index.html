@@ -1,0 +1,39 @@
+{%extends 'Layout.html'%}
+
+
+{%block body%}
+
+<div class="container" align ="left">
+	
+	<label style="color: red">{{message}}</label>
+</div>
+
+<div class="container" align="center">
+
+<h1>BOOK STORE</h1><br><br>
+
+
+<div class="container" style="background-color: lightgrey;width: 40%;padding: 10px" >
+	<form action="{{url_for('index')}}" method="POST">
+
+		USERNAME: <input type="text" name="username" ><br><br>
+		PASSWORD: <input type="password" name="passwrd"><br><br>
+		 <input type="submit" class="btn btn-info" value="Log In"><br>
+		 <a href="">forgot password</a>
+		 <br>
+		 <a href="{{url_for('register')}}"> create a new account</a>
+
+		
+
+
+	</form>
+
+
+</div>
+
+
+</div>
+
+
+
+{%endblock%}

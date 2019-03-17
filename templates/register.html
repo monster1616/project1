@@ -1,0 +1,39 @@
+{%extends 'Layout.html'%}
+
+
+{%block body%}
+<div class="container" align="left">
+	<label style="color: red">{{message}}</label>
+
+</div>
+
+<div class="container" align="center">
+
+<h3>Sign Up</h3><br><br>
+
+
+<div class="container" style="background-color: lightgrey;width: 40%;padding: 10px" >
+	<form action="{{url_for('register')}}" method="POST">
+
+		Username: <input type="text" name="username" autocomplete="off"><br><br>
+		Password: <input type="password" name="passwrd"><br><br>
+		
+		 <input type="submit" class="btn btn-info" value="Submit"><br>
+		 
+		 
+		 
+
+		
+
+
+	</form>
+
+
+</div>
+
+
+</div>
+
+
+
+{%endblock%}

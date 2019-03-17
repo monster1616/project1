@@ -1,0 +1,48 @@
+{%extends 'Layout.html'%}
+
+
+{%block body%}
+<div class="container" align="right">
+<label style="color: grey">{{session["user"]}}</label><br>
+<a href="{{url_for('index')}}">Logout</a>
+
+</div>
+<div class="container" align="center">
+
+<h1>BOOK STORE</h1><br><br>
+
+
+<div class="container" style="background-color: lightgrey;width: 40%;padding: 10px" >
+	<form action="{{url_for('search',user=user)}}" method="POST" >
+		<h3>Book Search</h3><br>
+		<input type="radio" name="srch" value="isbn">Isbn 
+  		<input type="radio" name="srch" value="title" checked>Title 
+ 		 <input type="radio" name="srch" value="author">Author<br>
+
+	
+		 <input type="text" name="keyword" placeholder="Enter isbn,title or author" autocomplete="off">
+		
+		 <input type="submit" class="btn btn-info" value="Search"><br>
+	</form>
+</div>
+<div class="container" style="padding: 10px ;width: 40%;text-align: left;" >
+	<ul class="list-group">
+		{%for list in lists%}
+			<li class="list-group-item"><a href="{{url_for('book_details',book_id=list.id)}}"><font size="4">{{list.title}}</font></a> by {{list.author}}({{list.year}})<br><font size="2">isbn:{{list.isbn}}</font> </li>
+			
+		{%endfor%}
+
+	</ul>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+{%endblock%}
