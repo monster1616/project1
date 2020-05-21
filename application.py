@@ -9,7 +9,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
 
 
-"""Application for flask""""
+"""Application for flask...............""""
 app = Flask(__name__)
 
 # Check for environment variable
