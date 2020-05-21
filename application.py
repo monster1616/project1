@@ -9,6 +9,8 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
 
 
+# my first application 
+
 """Application for flask...............""""
 app = Flask(__name__)
 
