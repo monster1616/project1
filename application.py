@@ -8,6 +8,8 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 # for api
 import requests
 
+
+"""Application for flask""""
 app = Flask(__name__)
 
 # Check for environment variable
